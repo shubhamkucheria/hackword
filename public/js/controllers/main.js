@@ -1,7 +1,7 @@
 angular.module('shubhamTodoController', [])
 	.controller('mainController', ['$scope','$http','Todo',function($scope, $http, Todo) {
 		$scope.formData = {};
-		$scope.result = 'yo yo';
+		$scope.result = '';
 
 		$scope.clear = function() {
 			$scope.formData = {};
