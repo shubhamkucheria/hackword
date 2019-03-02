@@ -1,0 +1,132 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="shubhamTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Hackword</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body, html {
+		    height: 100%;
+		    margin: 0;
+		    max-width: 100%;
+    		overflow-x: hidden;
+		}
+
+		.bg {
+			height: 100%;
+
+		    /* Center and scale the image nicely */
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+
+		header {
+		  height: 70px;
+		  width: 100%;
+		  position: absolute;
+		  top: 0px;
+		  color: white;
+		  background-color: #555;
+		  text-align: center;
+		}
+		#content {
+		  padding-top: 2px;
+		  width: 100%;
+		  background-color: grey;
+		  position: absolute;
+		  top:60px;
+		  bottom: 0px;
+		  overflow: auto;
+		}
+		footer {
+		  height: 60px;
+		  width: 100%;
+		  position: absolute;
+		  bottom: 0px;
+		  color: white;
+		  background-color: #555;
+		}
+		.topmargin {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+	</style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/todo.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+
+    <header>
+     	<div class="container-fluid text-center">
+			<p>
+				<h3>
+					Wordhack by Shubham
+					<i class="fa fa-coffee" aria-hidden="true"></i>
+				</h3>
+			</p>
+		</div>
+    </header>
+    <section id="content">
+    <div class="bg">
+    	<div class="row">
+    		<div class="col-sm-4 topmargin"></div>
+			<div class="col-sm-4 topmargin">
+				<div class="panel panel-primary">
+			    	<div class="panel-heading">
+			        	<h3 align="center">W O R D H A C K </h4>
+	    			</div>
+					<div class="panel-body">
+
+				 		<form>
+							<div class="form-group">
+							 	<input type="text" class="form-control input-lg text-center" placeholder="Word" ng-model="formData.text">
+							</div>
+							<div class="form-group">
+								<input type="number" class="form-control input-lg text-center" placeholder="Length" ng-model="formData.length">
+							</div>
+							<button ng-if="!editFunction" type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Submit</button>
+							<button ng-if="!editFunction" type="submit" class="btn btn-danger btn-lg" ng-click="clear()">Reset</button>
+						</form>
+					</div>
+				</div>
+			 </div>
+			 <div class="col-sm-4 topmargin"></div>
+		</div>
+		<div class="row">
+    		<div class="col-sm-4 topmargin"></div>
+			<div class="col-sm-4 topmargin">
+				<div class="panel panel-primary">
+			    	<div class="panel-heading" >
+			        	<h3 align="center" > Result </h4>
+	    			</div>
+					<div class="panel-body">
+						<h4 align="center" > {{result}} </h4>
+				 	</div>
+				</div>
+			 </div>
+			 <div class="col-sm-4 topmargin"></div>
+		</div>
+		</div>
+    </section>
+
+    <footer class="container-fluid text-center">
+		<p> Webapp by Shubham </p>
+		<p> Made with <i class="fa fa-heart" aria-hidden="true"></i></p>
+    </footer>
+</body>
+</html>
